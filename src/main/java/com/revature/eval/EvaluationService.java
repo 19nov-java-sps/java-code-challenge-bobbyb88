@@ -1,7 +1,12 @@
 package com.revature.eval;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.lang.*;
 
 public class EvaluationService {
 
@@ -13,9 +18,29 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String reverse(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
-	}
+		String s;
+		
+		if(string==null) {
+			return null;
+		}
+		
+		else {
+		StringBuffer sb= new StringBuffer(string); 
+		
+	
+	s= sb.reverse().toString();
+	
+		}
+		
+	return s;
+	
+	
+
+		}
+		
+	
+	
+	
 
 	
 	/**
@@ -26,11 +51,72 @@ public class EvaluationService {
 	 * @param phrase
 	 * @return
 	 */
+	
+	
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
+	
+		
+		if(phrase==null) {
+			return null;
+		}
+		
+		String [] splitString= phrase.split("\\s*(=>|,|\\s)\\s*");
+		
+		String [] upperCased= new String[splitString.length];
+		StringBuffer sb= new StringBuffer();
+		String acronym=" ";
+		
+	if(phrase.isEmpty()) {
+		
+		return acronym;
+	}
+	
+	if(phrase!=null) {
+	
+	
+			
+	
+		for(int i=0;i<splitString.length;i++) {
+			upperCased[i]=splitString[i].toUpperCase();
+		}
+		
+	//	for(int i=0;i<fixedSplitStringtoUpperCase.length;i++) {
+			
+		//	acronym+=fixedSplitStringtoUpperCase[i].charAt(0);
+		
+			for(int i=0;i<upperCased.length;i++) {
+				
+				sb.append(upperCased[i].charAt(0));
+			}
+		
+		
+		
+		
+	//	}
+		acronym= sb.toString();
+		
+		
+		return acronym;
+		
+	}
+	
+	else {
 		return null;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+		}
+		
+	
+		
+	
+
 	
 	/**
 	 * 3. Given a word, compute the scrabble score for that word.
@@ -48,8 +134,64 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+	int count=0;
+	
+	String string1= string.toUpperCase();
+	
+	for(int i=0;i<string1.length();i++) {
+		
+		if((string1.charAt(i)=='A') ||(string1.charAt(i)=='E') || (string1.charAt(i)=='I') || (string1.charAt(i)=='O') || (string1.charAt(i)=='L') || (string1.charAt(i)=='N') || (string1.charAt(i)=='R') || (string1.charAt(i)=='S') || (string1.charAt(i)=='T') || (string1.charAt(i)=='U')) {
+			
+			count+=1;
+			
+		}
+		
+		else if((string1.charAt(i)=='D') || (string1.charAt(i)=='G')){
+			count+=2;
+		}
+		
+		
+				
+		
+if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='M') || (string1.charAt(i)=='P')) {
+			
+			count+=3;
+		}
+		
+		else if(string1.charAt(i)=='F' || string1.charAt(i)=='H' || string1.charAt(i)=='V'|| string1.charAt(i)=='W'|| string1.charAt(i)=='Y'){
+			
+			count+=4;	
+		}	
+		
+		else if(string1.charAt(i)=='K') {
+			
+			count+=5;
+			
+		}
+	else if((string1.charAt(i)=='J') || (string1.charAt(i)=='X')) {
+			
+			count+=8;
+			
+		}
+	else if((string1.charAt(i)=='Q') || (string1.charAt(i)=='Z')) {
+		
+		count+=10;
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+	}
+		
+		
+		
+		
+		
+		return count;
 	}
 	
 	
@@ -63,8 +205,40 @@ public class EvaluationService {
 	 * @return 
 	 */
 	public Map<String, Integer> wordCount(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		
+		String [] wordsinString =string.split("\\s*(=>|,|\\s)\\s*");
+		
+		
+		LinkedHashMap<String, Integer> wordCount= new LinkedHashMap<String, Integer>();
+		
+		int count=0;
+	
+		
+		for(int i=0;i<wordsinString.length;i++) {
+			
+			if(wordsinString[i].equals(wordsinString[i])){
+			
+				count++;
+				
+			}
+			
+			
+			
+			wordCount.put(wordsinString[i],count);
+		
+			count=0;
+			
+			
+		}
+		
+
+return wordCount;
+		
+		
+		
+		
+		
+		
 	}
 	
 	/**
@@ -106,8 +280,14 @@ public class EvaluationService {
 		private List<T> sortedList;
 
 		public int indexOf(T t) {
-			// TODO Write an implementation for this method declaration
-			return 0;
+			List<T> sortedList = Collections.unmodifiableList(Arrays.asList(t));
+		int x=sortedList.indexOf(t);
+		
+		return x;
+		
+			
+			
+			
 		}
 
 		public BinarySearch(List<T> sortedList) {
