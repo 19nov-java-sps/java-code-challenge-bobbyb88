@@ -284,12 +284,25 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 
 		public int indexOf(T t) {
 			
-			
-			
+			int x=0;
+			List<Integer> sortedList = (List<Integer>) Collections.unmodifiableList(Arrays.asList(t));
 	
 		
-	return 0;
+	for(int i=0;i<sortedList.size();i++) {
 		
+		
+		if(sortedList.get(i)==t) {
+			
+			x=i;
+		}
+	
+		
+	}
+		
+	return x;
+	
+	
+	
 	
 		
 		
@@ -314,7 +327,7 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 			super();
 			this.sortedList = sortedList;
 		
-			int x= sortedList.size()/2;
+			
 			
 			
 			
