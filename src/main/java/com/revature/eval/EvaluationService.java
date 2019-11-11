@@ -285,8 +285,41 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 		public int indexOf(T t) {
 			
 			int x=0;
-			List<Integer> sortedList = (List<Integer>) Collections.unmodifiableList(Arrays.asList(t));
+			
+	int left=0;
+	int right=sortedList.size()-1;
 	
+	int middle= sortedList.size()/2;
+			
+	
+	if(sortedList.indexOf(t)==middle) {
+		return middle;
+	}
+			
+	
+	else if(sortedList.indexOf(t)<middle){
+	for(int i=left;i<middle;i++) {
+		x=sortedList.indexOf(t);
+		
+	}
+		
+	}
+	
+	
+	else if(sortedList.indexOf(t)>middle) {
+		for(int i=middle;i<right;i++) {
+			x=sortedList.indexOf(t);
+			
+		}
+		
+		
+		
+		
+	}
+	return x;
+	
+	
+	/*
 		
 	for(int i=0;i<sortedList.size();i++) {
 		
@@ -301,7 +334,7 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 		
 	return x;
 	
-	
+	*/
 	
 	
 		
