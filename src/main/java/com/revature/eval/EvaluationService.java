@@ -18,25 +18,32 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String reverse(String string) {
-		String s;
+		String s= "";
 		
+		
+		if(string==" ") {
+			s=" ";
+			
+		}
 		if(string==null) {
 			return null;
 		}
 		
 		else {
-		StringBuffer sb= new StringBuffer(string); 
+			
 		
-	
-	s= sb.reverse().toString();
-	
+ for(int i=string.length()-1;i>=0;i--) {
+	 s+=string.charAt(i);
+	 
+	 
+ }
+ 
 		}
-		
 	return s;
-	
-	
 
 		}
+	
+	
 		
 	
 	
