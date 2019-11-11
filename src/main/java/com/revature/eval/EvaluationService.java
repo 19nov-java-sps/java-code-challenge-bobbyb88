@@ -67,7 +67,8 @@ public class EvaluationService {
 			return null;
 		}
 		
-		String [] splitString= phrase.split("\\s*(=>|,|\\s)\\s*");
+		
+		String [] splitString= phrase.split("\\s*(=>|,|=>|-|\\s)\\s*");
 		
 		String [] upperCased= new String[splitString.length];
 		StringBuffer sb= new StringBuffer();
@@ -283,11 +284,24 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 
 		public int indexOf(T t) {
 			
-			List<T> sortedList = Collections.unmodifiableList(Arrays.asList(t));
 			
-	int x= sortedList.indexOf(t);
+			
 	
-	return x;
+		
+	return 0;
+		
+	
+		
+		
+		
+	
+		
+			
+			
+			
+		
+			
+	
 
 		
 		
@@ -299,6 +313,11 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 		public BinarySearch(List<T> sortedList) {
 			super();
 			this.sortedList = sortedList;
+		
+			int x= sortedList.size()/2;
+			
+			
+			
 			
 		
 			
