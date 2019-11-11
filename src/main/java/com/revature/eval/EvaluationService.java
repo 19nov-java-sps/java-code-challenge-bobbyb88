@@ -217,29 +217,24 @@ if((string1.charAt(i)=='B') || (string1.charAt(i)=='C') || (string1.charAt(i)=='
 		
 		
 		LinkedHashMap<String, Integer> wordCount= new LinkedHashMap<String, Integer>();
-		
 		int count=0;
-	
-		
 		for(int i=0;i<wordsinString.length;i++) {
-			
-			if(wordsinString[i].equals(wordsinString[i])){
-			
-				count++;
+			for(int j=0;j<wordsinString.length;j++) {
+				
+				if(wordsinString[i].equals(wordsinString[j])) {
+					count++;
+					
+				}
 				
 			}
-			
-			
-			
-			wordCount.put(wordsinString[i],count);
+		wordCount.put(wordsinString[i],count);
 		
-			count=0;
-			
-			
+		count=0;
+		
 		}
 		
-
-return wordCount;
+		return wordCount;
+		
 		
 		
 		
@@ -287,10 +282,14 @@ return wordCount;
 		private List<T> sortedList;
 
 		public int indexOf(T t) {
+			
 			List<T> sortedList = Collections.unmodifiableList(Arrays.asList(t));
-		int x=sortedList.indexOf(t);
+			
+	int x= sortedList.indexOf(t);
+	
+	return x;
+
 		
-		return x;
 		
 			
 			
@@ -300,6 +299,11 @@ return wordCount;
 		public BinarySearch(List<T> sortedList) {
 			super();
 			this.sortedList = sortedList;
+			
+		
+			
+			
+			
 		}
 
 		public List<T> getSortedList() {
